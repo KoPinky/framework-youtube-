@@ -1,0 +1,26 @@
+<?php
+
+namespace application\controllers;
+
+use application\core\Controller;
+use application\lib\Db;
+
+class MainController extends Controller
+{
+    
+
+    function indexAction(){
+       
+        $result = $this->model->getNews();
+        $vars = [
+            'news' => $result
+        ];
+        $this->view->render('Главная страница', $vars);
+        //echo 'Это главная ст1раница';
+    }
+    
+    function contactAction(){
+        echo 'Это контакты';
+    }
+    
+}
